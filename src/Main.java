@@ -1,15 +1,98 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/*
+
+abstract class Computer
+{
+//	public void code()
+//	{
+//
+//	}
+	public abstract void code();
+}
+
+class Laptop extends Computer
+{
+	public void code()
+	{
+		System.out.println("code, compile, run");
+	}
+
+}
+
+class Desktop extends Computer
+{
+	public void code()
+	{
+		System.out.println("code, compile, faster");
+	}
+}
+class Developer
+{
+//	public void devApp(Laptop lap)
+	public void devApp(Computer comp)
+	{
+		comp.code();
+	}
+}
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+//        Laptop lap = new Laptop();
+//        Desktop desk = new Desktop();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Computer lap = new Laptop();
+        Computer desk=new Desktop();
+
+        Developer gaoussou = new Developer();
+        gaoussou.devApp(lap);
+
+    }
+}
+*/
+
+
+
+interface Computer
+{
+    void code();
+}
+
+class Laptop implements Computer
+{
+    public void code()
+    {
+        System.out.println("code, compile, run");
+    }
+
+}
+
+class Desktop implements Computer
+{
+    public void code()
+    {
+        System.out.println("code, compile, faster");
+    }
+}
+class Developer
+{
+    //	public void devApp(Laptop lap)
+    public void devApp(Computer comp)
+    {
+        comp.code();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+//        Laptop lap=new Laptop();
+//        Desktop desk=new Desktop();
+
+        Computer lap = new Laptop();
+        Computer desk = new Desktop();
+
+        Developer gaoussou = new Developer();
+        gaoussou.devApp(lap);
+        System.out.println();
+        gaoussou.devApp(desk);
+
     }
 }
